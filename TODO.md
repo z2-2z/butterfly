@@ -1,3 +1,0 @@
-- [ ] token mutations
-- [ ] more sophisticated mutation scheduling by tracking potency of packets
-- [ ] change pcap dependency to pure-rust pcap crate

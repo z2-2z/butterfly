@@ -1,40 +1,12 @@
 [package]
-name = "butterfly-fuzz"
-version = "0.2.2"
-edition = "2021"
-authors = ["Patrick D."]
-description = "LibAFL components for stateful fuzzing"
-readme = "README.md"
-repository = "https://github.com/fkie-cad/butterfly"
-license = "MIT"
-keywords = ["libafl", "fuzzing", "security", "stateful"]
-include = [
-    "src/*",
-    "Cargo.toml",
-    "README.md",
-]
+name = "butterfly"
+version = "0.2.0"
+edition = "2024"
 
 [dependencies]
-libafl = "0.8"
-pcap = { version = "0.9", features = [] }
+libafl = { version = "0.15.3", features = ["prelude"] }
+libafl_bolts = { version = "0.15.3", features = ["prelude"] }
 serde = "1.0"
-ahash = "0.7"
-
-[features]
-default = []
-
-# Only needed for building documentation on docs.rs
-docs-rs = ["pcap/docs-rs"]
-
-# Enables the GraphvizMonitor
-graphviz = []
-
-# Replace performance-optimized unsafe operations
-# with slightly slower but safe operations
-safe_only = []
-
-[package.metadata.docs.rs]
-all-features = true
-
-[lib]
-doctest = false
+postcard = "1.0"
+rand_core = "0.9"
+smallvec = "1.15"
